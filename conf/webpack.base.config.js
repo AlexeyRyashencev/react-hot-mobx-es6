@@ -1,5 +1,9 @@
+import webpack from 'webpack';
 import Config from 'webpack-config';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import autoprefixer from 'autoprefixer';
+import precss from 'precss';
+
 export default new Config().merge({
   entry: './client/index.js',
   output: {
@@ -16,7 +20,9 @@ export default new Config().merge({
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: __dirname + '/../client/index.html',
+      template: './client/index.html',
       inject: "body"
-    })]
+    }),
+    new webpack.LoaderOptionsPlugin({ options: { postcss: [precss, autoprefixer] } })
+  ]
 });

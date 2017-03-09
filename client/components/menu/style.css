@@ -1,0 +1,17 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  background-color: tomato;
+  & .toggle-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 26px;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+  }
+}
