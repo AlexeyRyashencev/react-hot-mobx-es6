@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Home extends React.Component {
+export default class Home extends React.Component {
 
   constructor() {
     super();
@@ -8,25 +8,15 @@ class Home extends React.Component {
     this.clickHandler = this.clickHandler.bind(this);
   }
 
-  clickHandler(e) {
-    matchesStore.add();
-    console.log(e.curr);
+  clickHandler() {
+    this.setState({ name: "Bunny" });
   }
 
   render() {
-    let matches = matchesStore.getAll();
-    const matchItems = matches.map((match) =>
-      <li>
-        {match}
-      </li>
-    );
     return (
-      <ul>
-        {matchItems}
-        <button onClick={this.clickHandler}>Add</button>
-
-      </ul>
+      <h1 onClick={this.clickHandler}>
+        {`Hello ${this.state.name}!`}
+      </h1>
     );
   }
 }
-export default Home;
