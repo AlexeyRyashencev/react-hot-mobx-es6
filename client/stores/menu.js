@@ -1,17 +1,33 @@
-import { observable } from 'mobx';
+import { observable, computed, action } from 'mobx';
 
-export default class MatchesStore {
+class MenuStore {
   @observable show;
 
   constructor() {
     this.show = false;
   }
 
-  get() {
+  @computed get isOpenLeftPanel() {
     return this.show;
   }
 
-  toggle() {
+  @action('toggle left panel')
+  toggleLeftPanel() {
     this.show = !this.show;
   }
+
+  @action('show left panel')
+  openLeftPanel() {
+    this.show = true;
+  }
+
+  @action('hide left panel')
+  closeLeftPanel() {
+    this.show = false;
+  }
 }
+
+const menuStore = new MenuStore();
+
+export default menuStore;
+export { MenuStore };

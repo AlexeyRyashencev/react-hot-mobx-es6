@@ -1,10 +1,13 @@
 .menu {
   position: fixed;
   top: 0;
-  left: 0;
+  left: -180px;
   bottom: 0;
-  width: 40px;
+  width: 220px;
   background-color: tomato;
+  &.active {
+    left: 0;
+  }
   & .toggle-btn {
     position: absolute;
     top: 5px;

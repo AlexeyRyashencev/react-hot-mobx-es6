@@ -1,11 +1,13 @@
 import React from 'react';
+import { observer, inject } from 'mobx-react';
 
-import styles from './style.css';
+import Menu from './menu'
 
-const Menu = () => (
-  <nav className={styles.menu}>
-    <div className={styles['toggle-btn']}>&#9776;</div>
-  </nav>
-);
+const Component = inject('leftMenuStore')(observer(({ leftMenuStore }) => (
+  <Menu
+    toggleMenu={() => leftMenuStore.toggleLeftPanel()}
+    isOpenLeftPanel={leftMenuStore.isOpenLeftPanel} />
+)));
 
-export default Menu;
+Component.displayName = 'MenuContainer';
+export default Component;

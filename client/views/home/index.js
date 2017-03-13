@@ -1,22 +1,11 @@
 import React from 'react';
+import LeftPanelController from '../../components/left-panel-controller';
 
-export default class Home extends React.Component {
+const Home = () => (
+  <div>
+    <h1>Left panel controller</h1>
+    <LeftPanelController />
+  </div>
+);
+export default Home;
 
-  constructor() {
-    super();
-    this.state = { name: "Kitty" };
-    this.clickHandler = this.clickHandler.bind(this);
-  }
-
-  clickHandler() {
-    this.setState({ name: "Bunny" });
-  }
-
-  render() {
-    return (
-      <h1 onClick={this.clickHandler}>
-        {`Hello ${this.state.name}!`}
-      </h1>
-    );
-  }
-}

@@ -1,0 +1,8 @@
+.app-container {
+  position: relative;
+}
+
+.page-container {
+  display: flex;
+  justify-content: center;
+}
