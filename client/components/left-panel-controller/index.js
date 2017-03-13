@@ -11,5 +11,5 @@ const Component = inject('leftMenuStore')(({ leftMenuStore }) => {
   );
 });
 
-LeftPanelController.displayName = 'LeftPanelControllerContainer';
+Component.displayName = 'LeftPanelControllerContainer';
 export default Component;
