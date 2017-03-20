@@ -6,21 +6,23 @@ import { useStrict } from 'mobx';
 import Menu from '../components/menu';
 
 /* stores */
-import leftMenuStore from '../stores/menu';
+import leftMenuStore from '../stores/menu-store';
+import userStore from '../stores/user-store';
 
 /* styles */
 import './global.css';
-import style from './app.css';
+import styles from './app.css';
 
+/* use mobx strict mode */
 useStrict(true);
 
-const stores = { leftMenuStore };
+const stores = { leftMenuStore, userStore };
 
 const App = props => (
   <Provider { ...stores }>
-    <div className={style['app-container']}>
+    <div className={styles['app-container']}>
       <Menu />
-      <div className={style['page-container']}>
+      <div className={styles['page-container']}>
         {props.children}
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { observable, computed, action } from 'mobx';
+import { observable, computed, action, autorun } from 'mobx';
 
 class MenuStore {
   @observable show;
@@ -28,6 +28,10 @@ class MenuStore {
 }
 
 const menuStore = new MenuStore();
+
+autorun(() => {
+  console.log(menuStore.show);
+});
 
 export default menuStore;
 export { MenuStore };
